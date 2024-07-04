@@ -1,0 +1,415 @@
+site_name: TG Drives
+site_url: https://tgd-hw.github.io/tgmanGH/
+copyright: Copyright &copy; 2024 TG Drives, s.r.o.
+theme:
+  name: 'material'
+  language: cs
+  font: false
+  logo: Manual/source/img/TGlogoFullWhite.svg
+  icon:
+    logo: Manual/source/img/TGlogoFull.svg
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+  features:
+    # - navigation.instant
+    # - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.path
+    - navigation.top
+#   - navigation.footer
+#   - navigation.sections
+    - toc.integrate
+    - search.highlight
+    - header.autohide
+    - content.footnote.tooltips
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+  extra:
+    logo: Manual/source/img/TGsymbol.svg
+  palette:
+    primary: custom
+    accent: teal
+  favicon: Manual/source/img/TGsymbol.svg
+extra:
+    generator: true #hlaska Made with MkDown disable - muze se enablovat aby meli vetsi podporu
+    homepage: https://www.dev.tgdrives.cz/
+    # version:
+        # provider: mike
+        #default: stable
+    # alternate:
+        # - name: Česky
+          # link: /Manual/CZ/TGZ/TGZ-D-48-13/md/mark/
+          # lang: cs
+        # - name: English
+          # link: /Manual/CZ/TGS/TGS-320-10_15/md/mark/
+          # lang: en
+# Cookie bar    
+#    consent:
+#        title: Chcete naše sušenky?
+#        description: Na našich webových stránkách používáme soubory cookies. Některé z nich jsou nezbytné, zatímco jiné nám pomáhají vylepšit tento web a váš uživatelský zážitek. Souhlasíte s používáním všech cookies? 
+plugins:
+  - search
+  - table-reader:
+      base_path: "config_dir"
+      data_path: "docs/Manual/source/common/tab"
+      search_page_directory: True
+      allow_missing_files: False
+      select_readers:
+        - read_excel
+        - read_csv
+  - glightbox:
+       touchNavigation: true
+       loop: false
+       effect: zoom
+       slide_effect: slide
+       width: 150%
+       height: auto
+       zoomable: true
+       draggable: true
+       skip_classes:
+         - custom-skip-class-name
+       auto_caption: false
+       caption_position: bottom
+       background: white
+       shadow: true
+  # odkomentovat až se bude řešit multilang. do té doby vypnuto, protože zpomaluje překlad
+  - i18n:
+       docs_structure: suffix
+       reconfigure_search: true
+       fallback_to_default: true
+       reconfigure_material: true
+       languages:
+            - locale: cs
+              default: true
+              name: Česky
+              build: true
+              site_name: "Česky"
+              site_description: "Český manuál"
+            - locale: en
+              default: false
+              name: English
+              build: true
+              site_name: "English"
+              site_description: "Description EN"
+                
+  #mike nefungoval
+  # - mike:
+        # alias_type: copy
+        # redirect_template: null
+        # deploy_prefix: ''
+        # canonical_version: null
+        # version_selector: true
+        # css_dir: css
+        # javascript_dir: js
+
+markdown_extensions:
+ - pymdownx.arithmatex:
+    generic: true
+ - md_in_html
+ - pymdownx.snippets:
+      base_path:
+        - docs/Manual/source
+        - docs/Manual/CZ/TGZ/
+        - docs/Manual/CZ/TGS/
+        - docs/Manual/CZ/TGM/
+        - docs/Manual/CZ/ETC/
+        - docs/Manual/CZ/SW/        
+ - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+ - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg      
+ - pymdownx.inlinehilite
+ - pymdownx.details
+ - pymdownx.superfences
+ - pymdownx.critic
+ - admonition
+ - tables
+ - footnotes
+ - attr_list
+ # nahledy stranek po ukazani mysi jsou zatim jen pro insidery - plugin neni nalezen, nejde nainstalovat
+ # - material.extensions.preview:
+      # targets:
+        # include:
+          # - Manual/CZ/TGZ/TGZ-D-48-13/md/mark.md
+ - toc:
+    permalink: true
+ 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+ - stylesheets/extra.css
+nav:
+        - Úvod: 'index.md'
+    #- About: 'about.md'
+        - 'TGZ':
+            - 'TGZ-D-48-13/26': 
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-D-48-13/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-D-48-13/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-D-48-13/md/description.md'                  
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-D-48-13/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-D-48-13/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-D-48-13/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-D-48-13/md/schematic.md'      
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-D-48-13/md/safe.md'
+            - 'TGZ-D-48-50/100':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/schematic.md'                  
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-D-48-50_100/md/safe.md'                   
+            - 'TGZ-S-48-50/100': 
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-50_100/md/safe.md'     
+            - 'TGZ-S-48-100/250': 
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-100_250/md/safe.md'   
+            - 'TGZ-S-48-100/300': 
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-100_300/md/safe.md'    
+            - 'TGZ-S-48-100/425': 
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-100_425/md/safe.md'         
+            - 'TGZ-S-230-5/15':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-230-5_15/md/safe.md'
+            - 'TGZ-D-320-5/10':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-D-320-5_10/md/safe.md'
+            - 'TGZ-D-320-5/15':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-D-320-5_15/md/safe.md'  
+            - 'TGZ-S-400-3/9':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-400-3_9/md/safe.md'  
+                #pokusne vlozeni 3D modelu xhtml+JS. je to pomerne pomale na praci, proto zatim zakomentovano
+                #- 3D Model: 'Manual/source/common/xhtml/S400.md'
+            - 'TGZ-S-400-7/15':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-400-7_15/md/safe.md'
+            - 'TGZ-S-400-10/20':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-400-10_20/md/safe.md'   
+            - 'TGZ-S-400-14/30':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-400-14_30/md/safe.md'   
+            - 'TGZ-D-560-30/50':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-D-560-30_50/md/safe.md'
+            - 'TGZ-S-48-50/100 RI':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-50_100RI/md/safe.md'
+            - 'TGZ-S-48-100/250 RI':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-100_250RI/md/safe.md'    
+            - 'TGZ-S-48-100/300 RI':
+                - Základní informace: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/mark.md'
+                - Parametry: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/description.md'
+                - Rozměry: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGZ/TGZ-S-48-100_300RI/md/safe.md'       
+            - 'Společný HW':
+                - Stavová a chybová hlášení: 'Manual/CZ/TGZ/TGZ_SW/LED/md/description.md'
+                - Digitální vstupy: 'Manual/source/md/commonHW_DI.md'
+                - Digitální výstupy: 'Manual/source/md/commonHW_DO.md'  
+                - Analogové vstupy: 'Manual/source/md/commonHW_AI.md'  
+                - Sběrnice CAN: 'Manual/source/md/commonHW_CAN.md'
+                - Zpětná vazba FBE: 'Manual/source/md/commonHW_FBE.md'
+                - Zpětná vazba FB1, FB2: 'Manual/source/md/commonHW_FB12.md'                
+            - 'Řízení a regulace':
+                - Regulační struktura: 'Manual/CZ/SW/REG/md/TGZstructure.md'
+                - Profile generator: 'Manual/CZ/SW/REG/md/PG.md'
+                - Další funkce: 'Manual/CZ/SW/REG/md/AuxFunc.md'
+                - Nouzové zabrždění: 'Manual/CZ/SW/REG/md/ESTOP.md' 
+                - SD karty: 'Manual/CZ/TGZ/TGZ_SW/SD/md/SD.md'                   
+            - 'TGZ GUI': 
+                - Instalace a spuštění: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/intro.md'
+                - Připojení k TGZ: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/connection.md'
+                - Nastavení parametrů: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/parameters.md'
+                - Osciloskop: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/osc.md'
+                - Přehrávání firmware: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/FW.md'                
+                - Uživatelský program: 'Manual/CZ/TGZ/TGZ_SW/GUI/md/userProg.md'
+        - 'TGS':
+            - TGS-320-10/15:
+                - Základní informace: 'Manual/CZ/TGS/TGS-320-10_15/md/mark.md'
+                - Parametry: 'Manual/CZ/TGS/TGS-320-10_15/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGS/TGS-320-10_15/md/description.md'
+                - Rozměry: 'Manual/CZ/TGS/TGS-320-10_15/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGS/TGS-320-10_15/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGS/TGS-320-10_15/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGS/TGS-320-10_15/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGS/TGS-320-10_15/md/safe.md'  
+            - TGS-560-25/50:
+                - Základní informace: 'Manual/CZ/TGS/TGS-560-25_50/md/mark.md'
+                - Parametry: 'Manual/CZ/TGS/TGS-560-25_50/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGS/TGS-560-25_50/md/description.md'
+                - Rozměry: 'Manual/CZ/TGS/TGS-560-25_50/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGS/TGS-560-25_50/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGS/TGS-560-25_50/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGS/TGS-560-25_50/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGS/TGS-560-25_50/md/safe.md'                  
+            - TGS-560-50/100:
+                - Základní informace: 'Manual/CZ/TGS/TGS-560-50_100/md/mark.md'
+                - Parametry: 'Manual/CZ/TGS/TGS-560-50_100/md/param.md'
+                - Popis zařízení: 'Manual/CZ/TGS/TGS-560-50_100/md/description.md'
+                - Rozměry: 'Manual/CZ/TGS/TGS-560-50_100/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGS/TGS-560-50_100/md/mounting.md'
+                - Elektrická instalace: 'Manual/CZ/TGS/TGS-560-50_100/md/electric.md'
+                - Příklad zapojení: 'Manual/CZ/TGS/TGS-560-50_100/md/schematic.md'               
+                - Bezpečnost: 'Manual/CZ/TGS/TGS-560-50_100/md/safe.md'  
+        - 'TGM':
+            - TGMmini:
+                - Základní informace: 'Manual/CZ/TGM/TGMmini/md/basic.md'
+                - Parametry: 'Manual/CZ/TGM/TGMmini/md/param.md'
+                - Popis konektorů: 'Manual/CZ/TGM/TGMmini/md/connectors.md'                
+                - Linux: 'Manual/CZ/TGM/TGMmini/md/linux.md'              
+                - Rozměry: 'Manual/CZ/TGM/TGMmini/md/dimension.md'
+                - Montáž: 'Manual/CZ/TGM/TGMmini/md/mounting.md'
+                - Příklad zapojení: 'Manual/CZ/TGM/TGMmini/md/schematic.md'              
+            - TGMcontroller:
+                - Základní informace: 'Manual/CZ/TGM/TGMcontroller/md/basic.md'
+                - Parametry: 'Manual/CZ/TGM/TGMcontroller/md/param.md'
+                - Popis konektorů: 'Manual/CZ/TGM/TGMcontroller/md/connectors.md'
+                - Rozměry: 'Manual/CZ/TGM/TGMcontroller/md/dimension.md'
+                - Software: 'Manual/CZ/TGM/TGMcontroller/md/software.md'              
+#                - Montáž: 'Manual/CZ/TGM/TGMcontroller/md/mounting.md'
+#                - Příklad zapojení: 'Manual/CZ/TGM/TGMcontroller/md/schematic.md'   
+            - TGZ+Motion:
+                - Základní informace: 'Manual/CZ/TGM/TGZpMotion/md/basic.md'
+                - Parametry: 'Manual/CZ/TGM/TGZpMotion/md/param.md'
+                - Popis konektorů: 'Manual/CZ/TGM/TGZpMotion/md/connectors.md'
+                - Servozesilovač TGZ: 'Manual/CZ/TGM/TGZpMotion/md/TGZ.md'
+                - Software: 'Manual/CZ/TGM/TGZpMotion/md/software.md'              
+#                - Montáž: 'Manual/CZ/TGM/TGZpMotion/md/mounting.md'
+#                - Příklad zapojení: 'Manual/CZ/TGM/TGZpMotion/md/schematic.md'   
+        - Software:
+            - EtherCAT:
+                - Základní informace: 'Manual/CZ/SW/ECAT/md/intro.md'
+                - Popis komunikace: 'Manual/CZ/SW/ECAT/md/packet.md'
+                - Nastavení sítě: 'Manual/CZ/SW/ECAT/md/network.md'
+                - Sběrnice EtherCAT: 'Manual/CZ/SW/ECAT/md/EtherCAT.md'
+                - Katalog objektů: 'Manual/CZ/SW/ECAT/md/objects.md'         
+                - TGZ a TwinCAT: 'Manual/CZ/SW/ECAT/md/twinCAT.md'
+                - Codesys: 'Manual/CZ/SW/ECAT/md/codesys.md'   
+            - Profinet RT:
+                - Základní informace: 'Manual/CZ/SW/Profinet/md/intro.md'
+                - Obecné: 'Manual/CZ/SW/Profinet/md/general.md'
+                - Nastavení sítě: 'Manual/CZ/SW/Profinet/md/network.md'
+                - TIA portál: 'Manual/CZ/SW/Profinet/md/TIA.md'
+                - PROFIdrive: 'Manual/CZ/SW/Profinet/md/profidrive.md'                    
+            - EtherNET UDP:
+                - Základní informace: 'Manual/CZ/SW/ENET/md/intro.md'
+                - Popis komunikace: 'Manual/CZ/SW/ENET/md/packet.md'       
+            - CAN:
+                - Základní informace: 'Manual/CZ/SW/CAN/md/intro.md'
+                - Popis komunikace: 'Manual/CZ/SW/CAN/md/settings.md'    
+            - TGMotion:
+                - PLC: 'Manual/CZ/TGM/TGMotion/md/PLC.md'
+                - Hardware: 'Manual/CZ/TGM/TGMotion/md/HW.md'
+                - Interpolátor: 'Manual/CZ/TGM/TGMotion/md/interpolator.md'
+                - Osciloskop: 'Manual/CZ/TGM/TGMotion/md/osc.md'
+                # - Skupina servo: 'Manual/CZ/TGM/TGMotion/md/Gservo.md'   
+                # - Skupina IO: 'Manual/CZ/TGM/TGMotion/md/Gio.md'
+                # - Control Observer: 'Manual/CZ/TGM/TGMotion/md/CO.md'
+                # - CNC modul: 'Manual/CZ/TGM/TGMotion/md/CNC.md'    
+                # - CNC struktury: 'Manual/CZ/TGM/TGMotion/md/CNCs.md'   
+        - 'Ostatní': 
+            - TGHall: 'Manual/CZ/ETC/TGHall/md/description.md'
+            - Schémata kabelů: 'Manual/CZ/ETC/TGcable/md/description.md'
+        - 'Certifikáty': 'Manual/source/md/cert.md'
