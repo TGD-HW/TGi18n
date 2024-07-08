@@ -15,7 +15,7 @@ ___
 ### Strana komunikace/ethernet/ethercat
 ___
 
-<img src="../../../../../source/img/TGZ-D-48-13_26_enetCon.png" alt="ENET/ECAT/LogicPWR connectors" style="width:50%;">
+![ENET/ECAT/LogicPWR connectors](../../../../../source/img/TGZ-D-48-13_26_enetCon.png){: style="width: 50%;" }
 
 
 <div class="grid cards" markdown>
@@ -23,7 +23,7 @@ ___
 -   **X1 - Napájení řídicí části**
 
     ---
-	<img src="../../../../../source/img/1940760000.svg" alt="ENET/ECAT/LogicPWR connectors" style="width:70%;">
+	![Control supply voltage +24V con](../../../../../source/img/1940760000.svg){: style="width: 70%;" }
 
 -    Weidmüller BCZ 3.81/05/180 SN OR BX
 
