@@ -111,11 +111,11 @@ markdown_extensions:
  - pymdownx.snippets:
       base_path:
         - docs/Manual/source
-        - docs/Manual/CZ/TGZ/
-        - docs/Manual/CZ/TGS/
-        - docs/Manual/CZ/TGM/
-        - docs/Manual/CZ/ETC/
-        - docs/Manual/CZ/SW/        
+        - docs/Manual/CZ/TGZ
+        - docs/Manual/CZ/TGS
+        - docs/Manual/CZ/TGM
+        - docs/Manual/CZ/ETC
+        - docs/Manual/CZ/SW
  - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
